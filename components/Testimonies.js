@@ -39,8 +39,16 @@ export default function Testimonies() {
       bgColor: "bg-blue-400",
     },
     {
+      initials: "JM",
+      name: "Jeena M.",
+      rating: 5,
+      text: "My kids love Enlite, and as a mom, I love knowing my kids are staying hydrated without all the sugar.",
+      product: "STRAWBERRY VANILLA - SPARKLING WATER",
+      bgColor: "bg-orange-400",
+    },
+    {
       initials: "HB",
-      name: "Hanna B.",
+      name: "Harsha B.",
       rating: 5,
       text: "I LOVE THEM. They really carry the flavors of original soda and don't have any strange aftertaste like some other natural sodas!",
       product: "COLA - ZERO SUGAR SODA",
@@ -53,15 +61,7 @@ export default function Testimonies() {
       text: "As soon as I tried this, I was in disbelief of how good it was. Nothing quenches my thirst more than a cold can of Ginger Lime!",
       product: "GINGER LIME - SPARKLING WATER",
       bgColor: "bg-emerald-500",
-    },
-    {
-      initials: "JM",
-      name: "Jenna M.",
-      rating: 5,
-      text: "My kids love Enlite, and as a mom, I love knowing my kids are staying hydrated without all the sugar.",
-      product: "STRAWBERRY VANILLA - SPARKLING WATER",
-      bgColor: "bg-orange-400",
-    },
+    }
   ];
 
   return (

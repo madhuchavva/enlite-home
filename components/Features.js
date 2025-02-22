@@ -103,7 +103,7 @@ export default function Features() {
         </div>
       </div>
 
-      <div className="mt-10 bg-gradient-to-b from-transparent to-gray-50/70 py-20">
+      <div className="mt-5 bg-gradient-to-b from-transparent to-gray-50/70 py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="relative">
             {/* Carousel Navigation */}

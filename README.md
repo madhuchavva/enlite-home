@@ -15,8 +15,7 @@ First, clone the repository and install dependencies:
 
 ```bash
 bash
-git clone <your-repo-url>
-cd enlite-website
+cd enlite-home
 npm install
 ```
 
