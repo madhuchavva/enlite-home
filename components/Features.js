@@ -60,7 +60,7 @@ export default function Features() {
 
   return (
     <section
-      id="features"
+      id="products"
       className="py-20 bg-gradient-to-t from-[#524790] to-[#8c79ed]"
     >
       <div className="mx-8 max-w-7xl md:mx-10 lg:mx-20 xl:mx-auto">
