@@ -3,6 +3,12 @@ import Image from 'next/image';
 
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const navigation = [
+    { name: 'Products', href: '#products' },
+    { name: 'Features', href: '#features' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '/contact' },
+  ];
   return (
     <header>
       <div className="flex flex-col px-4 pt-4 mx-auto text-black roboto-regular max-w-7xl md:mx-10 lg:mx-20 xl:mx-auto md:flex-row md:items-center md:justify-between">
@@ -50,7 +56,7 @@ export default function Header() {
             <ul className="flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6">
               <li>
                 <a
-                  href="#products"
+                  href="/#products"
                   className="text-lg text-black hover:text-gray-700 font-medium"
                 >
                   Products
@@ -58,7 +64,7 @@ export default function Header() {
               </li>
               <li>
                 <a
-                  href="#learn"
+                  href="/#learn"
                   className="text-lg text-black hover:text-gray-700 font-medium"
                 >
                   Learn
@@ -66,7 +72,7 @@ export default function Header() {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="contact"
                   className="bg-white/30 backdrop-blur-sm rounded-full px-6 py-2 text-lg text-black font-medium shadow-sm transition-all duration-300 hover:bg-white/50 hover:scale-105 inline-flex items-center gap-2"
                 >
                   Get in Touch
