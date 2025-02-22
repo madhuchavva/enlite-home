@@ -3,6 +3,17 @@ import { motion } from 'framer-motion';
 export default function Contact() {
     return (
         <section className="relative py-24 z-10">
+            {/* Decorative Product Image */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[600px] overflow-hidden opacity-30 pointer-events-none">
+                <div
+                    className="absolute -right-32 top-0 w-[400px] h-[800px] bg-cover bg-center transform rotate-12"
+                    style={{
+                        backgroundImage: "url('/images/cola.jpeg')",
+                        filter: "blur(1px)",
+                    }}
+                />
+            </div>
+
             <div className="max-w-7xl mx-auto px-8 relative">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -177,7 +188,7 @@ export default function Contact() {
 
                 {/* Decorative Elements */}
                 <div className="absolute top-1/4 -left-4 w-24 h-24 bg-rose-400/20 rounded-full blur-2xl"></div>
-                <div className="absolute bottom-1/4 -right-4 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-1/4 -right-4 w-32 h-32 bg-purple-400/10 rounded-full blur-2xl"></div>
             </div>
         </section>
     );
