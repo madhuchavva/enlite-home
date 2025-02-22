@@ -65,7 +65,7 @@ export default function Testimonies() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#faf8f6] via-[#fdf1f3] to-[#f8d7dd]">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-[#faf8f6] via-[#fdf1f3] to-[#f8d7dd]">
       <div className="max-w-7xl mx-auto px-8">
         {/* Title Section */}
         <div className="text-center mb-16">

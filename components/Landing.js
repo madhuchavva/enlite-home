@@ -15,7 +15,7 @@ export default function Landing() {
           </div>
           <div className="flex justify-center">
             <a
-              href="#"
+              href="#testimonials"
               className="group px-8 py-3 text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1"
             >
               Get Enlitened
