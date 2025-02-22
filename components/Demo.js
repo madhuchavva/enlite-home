@@ -1,116 +1,127 @@
-export default function Demo() {
+import { motion } from 'framer-motion';
+
+export default function WhatsInside() {
   return (
-    <section id="demo" className="py-20 bg-opacity-50 bg-emerald-50">
-      <div className="mx-8 max-w-7xl md:mx-10 lg:mx-20 xl:mx-auto">
-        <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-          <div className="mb-12 space-y-5 text-left md:mb-20 md:text-center">
-            <div className="inline-block px-3 py-1 text-sm font-semibold rounded-lg bg-emerald-100 bg-opacity-60 text-emerald-500 hover:cursor-pointer hover:bg-opacity-80">
-              Product in Action
-            </div>
-            <h1 className="text-3xl font-semibold text-gray-800 md:text-5xl">
-              Here's a demo
-            </h1>
-            <p className="mx-auto text-xl md:w-2/3 md:text-2xl">
-              Talk a little bit about the product here and how it can
-              be revolutionary for the customer.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-3xl px-8 mx-auto sm:px-6 lg:max-w-5xl lg:px-8">
-        <div className="inline-block px-3 py-1 text-sm rounded-lg bg-emerald-100 bg-opacity-60 text-emerald-500 hover:cursor-pointer hover:bg-opacity-80">
-          Technology
-        </div>
-        <h2 className="mt-4 bg-gradient-to-r from-[#1D976C] to-[#38ef7d] bg-clip-text text-3xl font-medium text-transparent">
-          Built with Next.js & TailwindCSS
-        </h2>
-        <p className="mt-4 text-lg font-normal lg:max-w-3xl">
-          Aliquam ultrices sagittis orci a scelerisque purus. Ligula
-          ullamcorper malesuada proin libero nunc consequat.
-        </p>
-        <img
-          src="images/product.png"
-          className="mt-8 rounded-xl"
-          alt="placeholder"
-        />
-        <div className="grid grid-cols-1 grid-rows-1 gap-2 mt-4 md:auto-cols-auto md:grid-cols-3">
-          <div className="flex flex-col justify-between p-5 transition duration-500 border-2 shadow-md border-tranparent rounded-xl bg-emerald-200 bg-opacity-30 hover:border-emerald-300 hover:shadow-xl md:col-span-2">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                The latest and greatest.
+    <section className="py-24 bg-gradient-to-b from-white to-purple-50">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Left Content - 60% */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-[60%] space-y-10"
+          >
+            <div className="space-y-6">
+              <div className="inline-block rounded-lg bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-900">
+                The Good Stuff
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-900 to-indigo-700 bg-clip-text text-transparent">
+                What's Inside?
+              </h2>
+              <h3 className="text-xl font-semibold text-purple-800">
+                The Science is Simple: Your gut needs prebiotics to thrive.
               </h3>
-              <p className="mt-1 text-gray-800 text-md">
-                Tortor dignissim convallis aenean et tortor at. At
-                ultrices mi tempus imperdiet nulla malesuada. Id
-                cursus metus aliquam eleifend mi. Quis ipsum
-                suspendisse ultrices gravida dictum fusce ut.
-                Adipiscing elit ut aliquam purus.
+              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                Your body deserves more than just another drink. Hydration is key, but so is gut health—and we've got both covered. With zero sugar, 8% fiber, and prebiotics that work wonders for digestion, ENLITE is the fizz your body will actually thank you for.
               </p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between p-5 transition duration-500 border-2 shadow-md border-tranparent rounded-xl bg-emerald-200 bg-opacity-30 hover:border-emerald-300 hover:shadow-xl">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                Mighty quick.
-              </h3>
-              <p className="mt-1 text-gray-800 text-md">
-                Sed elementum tempus egestas sed sed risus pretium
-                quam vulputate.
+              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                Clean ingredients, bold flavors, and no junk—just pure refreshment with benefits.
               </p>
+              <div className="flex items-center gap-2 text-xl font-medium text-purple-800">
+                <span className="text-2xl">⚡</span>
+                Why? Because we actually care about what you sip.
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-3xl px-8 mx-auto sm:px-6 sm:pt-20 lg:max-w-5xl lg:px-8">
-        <div className="inline-block px-3 py-1 mt-12 text-sm rounded-lg md:md-0 bg-emerald-100 bg-opacity-60 text-emerald-500 hover:cursor-pointer hover:bg-opacity-80">
-          Product in Action
-        </div>
-        <h2 className="mt-4 bg-gradient-to-r from-[#1D976C] to-[#38ef7d] bg-clip-text text-3xl font-medium text-transparent">
-          Continuously exceeds expectations
-        </h2>
-        <p className="mt-4 text-lg font-normal lg:max-w-3xl">
-          Aliquam ultrices sagittis orci a scelerisque purus. Ligula
-          ullamcorper malesuada proin libero nunc consequat.
-        </p>
-        <img
-          src="images/product.png"
-          className="mt-8 rounded-xl"
-          alt="placeholder"
-        />
-        <div className="grid grid-cols-1 grid-rows-1 gap-2 mt-4 md:auto-cols-auto md:grid-cols-3">
-          <div className="flex flex-col justify-between p-5 transition duration-500 border-2 shadow-md border-tranparent rounded-xl bg-emerald-200 bg-opacity-30 hover:border-emerald-300 hover:shadow-xl">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                Defies the odds.
-              </h3>
-              <p className="mt-1 text-gray-800 text-md">
-                Tortor dignissim convallis aenean et tortor at. At
-                ultrices mi tempus imperdiet nulla malesuada.
-              </p>
+
+            <ul className="space-y-8">
+              {[
+                {
+                  title: "💖 Prebiotic Fiber",
+                  description: "8% daily fiber from premium prebiotic fiber that feeds your good gut bacteria",
+                  gradient: "from-pink-500 to-purple-500"
+                },
+                {
+                  title: "🚫 Zero Sugar – No spikes, no crashes",
+                  description: "Zero sugar, zero calories - sweetened naturally with monk fruit and stevia",
+                  gradient: "from-purple-500 to-indigo-500"
+                },
+                {
+                  title: "💦 Real Flavors – No artificial junk",
+                  description: "Pure fruit extracts and natural flavors for authentic taste",
+                  gradient: "from-indigo-500 to-blue-500"
+                },
+                {
+                  title: "🍃 Naturally Flavored & Clean AF",
+                  description: "Perfectly carbonated purified water for the ideal refreshing fizz",
+                  gradient: "from-blue-500 to-cyan-500"
+                }
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex gap-6 group hover:translate-x-2 transition-transform duration-300"
+                >
+                  <span className={`flex-shrink-0 w-1.5 h-auto bg-gradient-to-b ${item.gradient} rounded-full`}></span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Right Images - 40% */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-[40%] relative h-[600px]"
+          >
+            <div className="relative w-full h-full">
+              {/* Top Image */}
+              <motion.div
+                initial={{ x: 40, y: -40 }}
+                whileInView={{ x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute top-0 left-0 w-[80%] aspect-[4/3] shadow-xl hover:scale-105 transition-transform duration-300"
+              >
+                <div className="absolute inset-0 border-2 border-purple-300 rounded-2xl transform -rotate-6"></div>
+                <img
+                  src="/images/fruits.jpg"
+                  alt="Natural Ingredients"
+                  className="w-full h-full object-cover rounded-2xl transform rotate-6 hover:rotate-0 transition-transform duration-300"
+                />
+              </motion.div>
+
+              {/* Bottom Image */}
+              <motion.div
+                initial={{ x: -40, y: 40 }}
+                whileInView={{ x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute bottom-20 right-0 w-[80%] aspect-[4/3] shadow-xl hover:scale-105 transition-transform duration-300"
+              >
+                <div className="absolute inset-0 border-2 border-purple-300 rounded-2xl transform rotate-6"></div>
+                <img
+                  src="/images/girl-sipping-photo.jpeg"
+                  alt="Premium Components"
+                  className="w-full h-full object-cover rounded-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-300"
+                />
+              </motion.div>
             </div>
-          </div>
-          <div className="flex flex-col justify-between p-5 transition duration-500 border-2 shadow-md border-tranparent rounded-xl bg-emerald-200 bg-opacity-30 hover:border-emerald-300 hover:shadow-xl">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                Creatively designed.
-              </h3>
-              <p className="mt-1 text-gray-800 text-md">
-                Id cursus metus aliquam eleifend mi. Quis ipsum
-                suspendisse ultrices gravida dictum fusce ut.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between p-5 transition duration-500 border-2 shadow-md border-tranparent rounded-xl bg-emerald-200 bg-opacity-30 hover:border-emerald-300 hover:shadow-xl">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                Powerful.
-              </h3>
-              <p className="mt-1 text-gray-800 text-md">
-                Tortor dignissim convallis aenean et tortor at. Id
-                cursus metus aliquam eleifend mi.
-              </p>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

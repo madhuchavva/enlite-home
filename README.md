@@ -1,41 +1,28 @@
-<h1 align="center">
-  Uranium – your next SaaS website template
-</h1>
+# Enlite - Home page
 
-<p align="center">
-  <a href="https://www.gnu.org/licenses/gpl-3.0">
-    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GNU GPLv3">
-  </a>
-</p>
+Modern, responsive landing page for Enlite - a prebiotic soda brand. Built with Next.js, Tailwind CSS, and Framer Motion.
 
-<p align="center">
-  <a href="https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fminor%2Furanium">
-    <img src="https://vercel.com/button" alt="Deploy with Vercel">
-  </a>
-</p>
+## Tech Stack
 
-<p align="center"><a href="https://www.buymeacoffee.com/saurish" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a></p>
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
-## Licensing
+## Local Development
 
-Uranium *used* to be a paid template on [Gumroad](https://saurish.gumroad.com/l/uranium), but after feedback and personal thought, I've decided to make it open-source. That being said, it is distributed underneath the GNU GPLv3 license, which requires a few conditions available [here](https://choosealicense.com/licenses/gpl-3.0/). If you would like to purchase a license to bypass those conditions, please [reach out to me](https://github.com/minor/uranium#contact).
-
-## Screenshots
-
-![Landing](/public/Landing.jpg?raw=true)
-
-## Video
-
-https://user-images.githubusercontent.com/31828155/179379506-d9caebf2-a21e-440a-9248-f455bc3b00f8.mp4
-
-## How to use
-
-This template utilizes Next.js and TailwindCSS and is written in TypeScript. In order to get developing, please run the following things in your terminal:
+First, clone the repository and install dependencies:
 
 ```bash
-# change directory into the template
-cd uranium-master
+bash
+git clone <your-repo-url>
+cd enlite-website
+npm install
+```
 
+Then, run the development server:
+
+```bash
 # install & run
 yarn
 yarn dev
@@ -44,8 +31,66 @@ npm install
 npm run dev
 ```
 
-You can deploy this project to the cloud through [Vercel](https://vercel.com/&utm_source=uranium). You can learn more about this process in their [documentation](https://nextjs.org/docs/deployment).
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-## Contact
+## Deploying to Vercel
 
-If there are any questions about Uranium, please reach out to me at [me@saurish.com](mailto:me@saurish.com) or through Twitter [@saurishhh](https://twitter.com/saurishhh).
+The easiest way to deploy your Next.js app is to use [Vercel](https://vercel.com), the platform from the creators of Next.js.
+
+### Deploy Steps
+
+1. **Create a Vercel Account**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up with your GitHub account
+
+2. **Install Vercel CLI (Optional)**
+
+   ```bash
+   npm install -g vercel
+   ```
+
+3. **Deploy Options**:
+
+   **Option 1: Direct from GitHub**
+   - Push your code to GitHub
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Import your repository
+   - Vercel will automatically detect Next.js and configure the build settings
+   - Click "Deploy"
+
+   **Option 2: Using Vercel CLI**
+
+   ```bash
+   # Login to Vercel
+   vercel login
+
+   # Deploy
+   vercel
+   ```
+
+4. **Environment Variables**
+   - If your app uses environment variables, add them in Vercel:
+     - Go to Project Settings → Environment Variables
+     - Add each variable from your `.env.local`
+
+5. **Custom Domain (Optional)**
+   - Go to Project Settings → Domains
+   - Add your custom domain
+   - Follow the DNS configuration instructions
+
+### Automatic Deployments
+
+Once deployed, Vercel will automatically create new deployments whenever you push to your GitHub repository:
+
+- Push to `main` → Production deployment
+- Push to other branches → Preview deployment
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

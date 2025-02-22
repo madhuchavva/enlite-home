@@ -4,7 +4,8 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Landing from '../components/Landing';
 import Features from '../components/Features';
-import Demo from '../components/Demo';
+//import Demo from '../components/Demo';
+import WhatsInside from '../components/Demo';
 import Pricing from '../components/Pricing';
 import Testimonies from '../components/Testimonies';
 import Action from '../components/Action';
@@ -33,8 +34,8 @@ const Home: NextPage = () => {
         <Header />
         <Landing />
         <Features />
-        <Demo />
-        <Pricing />
+        <WhatsInside />
+        {/* <Pricing /> */}
         <Testimonies />
         <Action />
         <Footer />

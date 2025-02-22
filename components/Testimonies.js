@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const Tweet = ({ name, position, text, photoLink, tweetLink }) => {
   return (
     <div className="relative group">
@@ -27,145 +29,116 @@ const Tweet = ({ name, position, text, photoLink, tweetLink }) => {
 };
 
 export default function Testimonies() {
+  const testimonials = [
+    {
+      initials: "AL",
+      name: "Amber L.",
+      rating: 5,
+      text: "Lovinggg the cola! It makes me think of drinking cola floats with my grandma as a kid! You guys killed it!",
+      product: "COLA - ZERO SUGAR SODA",
+      bgColor: "bg-blue-400",
+    },
+    {
+      initials: "HB",
+      name: "Hanna B.",
+      rating: 5,
+      text: "I LOVE THEM. They really carry the flavors of original soda and don't have any strange aftertaste like some other natural sodas!",
+      product: "COLA - ZERO SUGAR SODA",
+      bgColor: "bg-pink-400",
+    },
+    {
+      initials: "AS",
+      name: "Arpita S.",
+      rating: 5,
+      text: "As soon as I tried this, I was in disbelief of how good it was. Nothing quenches my thirst more than a cold can of Ginger Lime!",
+      product: "GINGER LIME - SPARKLING WATER",
+      bgColor: "bg-emerald-500",
+    },
+    {
+      initials: "JM",
+      name: "Jenna M.",
+      rating: 5,
+      text: "My kids love Enlite, and as a mom, I love knowing my kids are staying hydrated without all the sugar.",
+      product: "STRAWBERRY VANILLA - SPARKLING WATER",
+      bgColor: "bg-orange-400",
+    },
+  ];
+
   return (
-    <section id="testimonies" className="py-20 bg-slate-900">
-      <div className="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
-        <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-          <div className="mb-12 space-y-5 md:mb-16 md:text-center">
-            <div className="inline-block px-3 py-1 text-sm font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-[#202c47] bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
-              Words from Others
-            </div>
-            <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-              It's not just us.
-            </h1>
-            <p className="text-xl text-gray-100 md:text-center md:text-2xl">
-              Here's what others have to say about us.
-            </p>
+    <section className="py-24 bg-gradient-to-b from-[#faf8f6] via-[#fdf1f3] to-[#f8d7dd]">
+      <div className="max-w-7xl mx-auto px-8">
+        {/* Title Section */}
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-6 h-6 text-rose-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
           </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            We Don't Just Make Drinks. {' '}
+            <span className="relative">
+              We Start Trends.
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-rose-400"></span>
+            </span>
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            Join the fizz-loving movement & show us how you sip! Here's what our early birds have to say about their Enlite experience.
+          </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          <ul className="space-y-8">
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Kanye West"
-                position="Rapper & Entrepreneur"
-                text="Find God."
-                photoLink="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-                tweetLink="https://twitter.com/kanyewest"
+
+        {/* Content Section */}
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          {/* Left Image Section - 40% */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-[40%]"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl transform rotate-3"></div>
+              <img
+                src="/images/ginger-lime.jpeg"
+                alt="Enlite Can Splash"
+                className="relative rounded-3xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"
               />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Tim Cook"
-                position="CEO of Apple"
-                text="Diam quis enim lobortis scelerisque fermentum
-                      dui faucibus in ornare. Donec pretium vulputate
-                      sapien nec sagittis aliquam malesuada bibendum."
-                photoLink="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                tweetLink="https://twitter.com/tim_cook"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Kanye West"
-                position="Rapper & Entrepreneur"
-                text="Find God."
-                photoLink="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-                tweetLink="https://twitter.com/kanyewest"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Tim Cook"
-                position="CEO of Apple"
-                text="Diam quis enim lobortis scelerisque fermentum
-                      dui faucibus in ornare. Donec pretium vulputate
-                      sapien nec sagittis aliquam malesuada bibendum."
-                photoLink="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                tweetLink="https://twitter.com/tim_cook"
-              />
-            </li>
-          </ul>
-          <ul className="hidden space-y-8 sm:block">
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Parag Agrawal"
-                position="CEO of Twitter"
-                text="Enim neque volutpat ac tincidunt vitae semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam pellentesque nec. Turpis cursus in hac habitasse platea dictumst."
-                photoLink="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                tweetLink="https://twitter.com/paraga"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Tim Cook"
-                position="CEO of Apple"
-                text="Diam quis enim lobortis scelerisque fermentum
-                      dui faucibus in ornare. Donec pretium vulputate
-                      sapien nec sagittis aliquam malesuada bibendum."
-                photoLink="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                tweetLink="https://twitter.com/tim_cook"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Parag Agrawal"
-                position="CEO of Twitter"
-                text="Enim neque volutpat ac tincidunt vitae semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam pellentesque nec. Turpis cursus in hac habitasse platea dictumst."
-                photoLink="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                tweetLink="https://twitter.com/paraga"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Tim Cook"
-                position="CEO of Apple"
-                text="Diam quis enim lobortis scelerisque fermentum
-                      dui faucibus in ornare. Donec pretium vulputate
-                      sapien nec sagittis aliquam malesuada bibendum."
-                photoLink="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                tweetLink="https://twitter.com/tim_cook"
-              />
-            </li>
-          </ul>
-          <ul className="hidden space-y-8 lg:block">
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Satya Nadella"
-                position="CEO of Microsoft"
-                text="Tortor dignissim convallis aenean et tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut."
-                photoLink="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                tweetLink="https://twitter.com/satyanadella"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Dan Schulman"
-                position="CEO of PayPal"
-                text="Quam pellentesque nec nam aliquam sem et tortor consequat id. Enim sit amet venenatis urna cursus."
-                photoLink="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                tweetLink="https://twitter.com/dan_schulman"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Satya Nadella"
-                position="CEO of Microsoft"
-                text="Tortor dignissim convallis aenean et tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut."
-                photoLink="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                tweetLink="https://twitter.com/satyanadella"
-              />
-            </li>
-            <li className="text-sm leading-6">
-              <Tweet
-                name="Dan Schulman"
-                position="CEO of PayPal"
-                text="Quam pellentesque nec nam aliquam sem et tortor consequat id. Enim sit amet venenatis urna cursus."
-                photoLink="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                tweetLink="https://twitter.com/dan_schulman"
-              />
-            </li>
-          </ul>
+            </div>
+          </motion.div>
+
+          {/* Right Testimonials Grid - 60% */}
+          <div className="lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`${testimonial.bgColor} rounded-2xl p-6 text-white hover:scale-105 transition-transform duration-300`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-semibold">
+                    {testimonial.initials}
+                  </span>
+                  <div>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <div className="flex">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm mb-3">"{testimonial.text}"</p>
+                <p className="text-xs font-semibold opacity-75">{testimonial.product}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
