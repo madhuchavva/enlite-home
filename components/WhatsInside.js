@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function WhatsInside() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-purple-50">
+    <section id="learn" className="py-24 bg-gradient-to-b from-white to-purple-50">
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Left Content - 60% */}
