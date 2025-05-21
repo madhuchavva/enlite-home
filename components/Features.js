@@ -1,36 +1,40 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import PreOrderModal from './PreOrderModal';
 
 export default function Features() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const strokeRef = useRef(null);
   const isInView = useInView(strokeRef, { once: true });
 
-  const features = [
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
+  const features = [
     {
       image: "/images/cola.jpeg",
-      title: "Cola – “Like Your Fav Soda, But Smarter.”",
+      title: "Cola – \"Like Your Fav Soda, But Smarter.\"",
       description: "Old-school cola vibes, but with zero sugar and gut-friendly fizz"
     },
     {
       image: "/images/mango.jpeg",
-      title: "🥭 Mango Mint – “Tropical Cool, Zero Sugar.”",
+      title: "🥭 Mango Mint – \"Tropical Cool, Zero Sugar.\"",
       description: "Juicy mango meets fresh mint for a refreshingly smooth sip"
     },
     {
       image: "/images/strawberry-vanilla-crop.jpeg",
-      title: "🍓 Strawberry Vanilla – “Dessert, But Make It Healthy.”",
+      title: "🍓 Strawberry Vanilla – \"Dessert, But Make It Healthy.\"",
       description: "Sweet strawberries and creamy vanilla—like a treat for your gut"
     },
     {
       image: "/images/ginger-lime.jpeg",
-      title: "🍋 Ginger Lime – “Spice Up Your Sip.”",
+      title: "🍋 Ginger Lime – \"Spice Up Your Sip.\"",
       description: "A zesty, spicy kick that wakes up your taste buds and your gut."
     },
     {
       image: "/images/sparkling-mineral-water.jpeg",
-      title: "💧 Sparkling Mineral Water – “Pure Hydration, No BS.”",
+      title: "💧 Sparkling Mineral Water – \"Pure Hydration, No BS.\"",
       description: "Crisp, clean, and naturally sparkling—hydration just leveled up."
     }
   ];
@@ -188,8 +192,8 @@ export default function Features() {
 
             {/* CTA Button */}
             <div className="mt-16 text-center">
-              <a
-                href="#order"
+              <button
+                onClick={openModal}
                 className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white transition-all duration-300 
                   bg-gradient-to-r from-[#524790] to-[#8c79ed] rounded-full hover:shadow-lg 
                   hover:shadow-purple-500/30 hover:-translate-y-1 group"
@@ -209,11 +213,14 @@ export default function Features() {
                     d="M13 7l5 5m0 0l-5 5m5-5H6"
                   />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Pre-Order Modal */}
+      <PreOrderModal isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 }
