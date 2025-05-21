@@ -1,8 +1,45 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function Contact() {
+    const [showToast, setShowToast] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        formData.append('contact', 'true');
+        
+        try {
+            await fetch('https://formbold.com/s/oDryy', {
+                method: 'POST',
+                body: formData,
+            });
+            
+            // Show toast and clear form
+            setShowToast(true);
+            e.target.reset();
+            
+            // Hide toast after 5 seconds
+            setTimeout(() => {
+                setShowToast(false);
+            }, 5000);
+        } catch (error) {
+            console.error('Error submitting contact form:', error);
+        }
+    };
+
     return (
         <section className="relative py-24 z-10">
+            {/* Toast Notification */}
+            {showToast && (
+                <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in-out">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Message sent successfully! We'll be in touch soon.</span>
+                </div>
+            )}
+
             {/* Decorative Product Image */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[600px] overflow-hidden opacity-30 pointer-events-none">
                 <div
@@ -40,7 +77,7 @@ export default function Contact() {
                 <div className="grid lg:grid-cols-2 gap-8">
                     {/* Left Column - Contact Form */}
                     <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl lg:row-span-2">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,8 +87,10 @@ export default function Contact() {
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Name</label>
                                 <input
                                     type="text"
+                                    name="name"
                                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
                                     placeholder="Your name"
+                                    required
                                 />
                             </motion.div>
 
@@ -64,8 +103,10 @@ export default function Contact() {
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Email</label>
                                 <input
                                     type="email"
+                                    name="email"
                                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
                                     placeholder="your@email.com"
+                                    required
                                 />
                             </motion.div>
 
@@ -78,8 +119,10 @@ export default function Contact() {
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Message</label>
                                 <textarea
                                     rows={4}
+                                    name="message"
                                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
                                     placeholder="What's on your mind?"
+                                    required
                                 />
                             </motion.div>
 

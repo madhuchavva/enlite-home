@@ -1,17 +1,57 @@
+import { useState } from 'react';
+
 export default function Footer() {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    formData.append('newsletter', 'true');
+    
+    try {
+      await fetch('https://formbold.com/s/oDryy', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      // Show toast and clear form
+      setShowToast(true);
+      e.target.reset();
+      
+      // Hide toast after 5 seconds
+      setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+    } catch (error) {
+      console.error('Error submitting newsletter form:', error);
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white">
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in-out">
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>Successfully subscribed! Check your inbox.</span>
+        </div>
+      )}
+      
       {/* Newsletter Section */}
       <div className="max-w-7xl mx-auto px-8 py-16 border-b border-gray-800">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl font-semibold text-gray-200 mb-8">
             Sign up for coupons, updates, and other fun stuff!
           </h3>
-          <form className="flex flex-col sm:flex-row gap-4">
+          <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleSubmit}>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="flex-1 px-6 py-4 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+              required
             />
             <button
               type="submit"
@@ -84,9 +124,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section - Copyright */}
+        {/* FSSAI License Information */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-sm text-gray-400">
-          <p>© 2024 Enlite. All rights reserved.</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="mb-2">Sales and Marketed by Rithm Beverages Private Limited</p>
+              <p>FSSAI License No: <span className="italic">Pending</span></p>
+            </div>
+            <div>
+              <p className="mb-2">Manufactured by Adhar Beverages Private Limited</p>
+              <p>FSSAI License No: 11522015000399</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section - Copyright */}
+        <div className="mt-8 text-sm text-gray-400">
+          <p>© 2025 Enlite. All rights reserved.</p>
         </div>
       </div>
     </footer>
