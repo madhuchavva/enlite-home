@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import Typing from './Typing';
+import PreOrderModal from './PreOrderModal';
 
 export default function Action() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="max-w-full md:mx-10 lg:mx-20 xl:mx-auto">
       <div
@@ -18,12 +25,12 @@ export default function Action() {
           🔥 Your Gut Called. It Wants ENLITE.
         </h2>
         <div className="flex flex-wrap justify-center mb-10 -mt-4 space-y-4 pace-x-4">
-          <a
+          <button
             className="md:mt-2 text-center text-gray-100 text-md md:text-xl font-semibold px-5 py-3 ease-in-out transform text-sm transition border-2 duration-400 hover:-translate-y-0.5 hover:text-gray-300 hover:border-gray-300 rounded-xl"
-            href="#"
+            onClick={openModal}
           >
             Pre-Order Now!
-          </a>
+          </button>
         </div>
         <div className="flex -ml-4 space-x-4 text-center text-gray-100 md:justify-center md:space-x-8">
           <div className="ml-4">
@@ -31,6 +38,9 @@ export default function Action() {
           </div>
         </div>
       </div>
+
+      {/* Pre-Order Modal */}
+      <PreOrderModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }
